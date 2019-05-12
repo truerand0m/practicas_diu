@@ -41,7 +41,7 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{ getMes( evento.fecha)}}</li>
                     <li class="list-group-item">{{ getDiaInicio( evento.fecha)}}</li>
-                    <li class="list-group-item">Dia Final</li>
+                    <li class="list-group-item">{{ getDiaFinal(evento.fecha)}}</li>
                   </ul>
             b-col(cols="5")
           b-row
@@ -94,6 +94,24 @@ export default {
         .replace(",", "")
         .toUpperCase();
       return fecha;
+    },
+    getDiaFinal: function(fecha) {
+      var fechax = fecha;
+      //alert("entre con "+fecha)
+      if (fechax.split(",").length == 3) {
+        //alert("fecha tiene otra fecha")
+        //alert(fecha.trim().split("–")[1].split(",")[0].split(" ")[1])
+        return fecha
+          .trim()
+          .split("–")[1]
+          .split(",")[0]
+          .split(" ")[1];
+      } else {
+        return fecha
+          .split(" ")[0]
+          .replace(",", "")
+          .toUpperCase();
+      }
     }
   },
   mounted() {
