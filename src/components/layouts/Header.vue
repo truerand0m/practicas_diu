@@ -26,7 +26,7 @@ const menuData = [
     children: []
   },
   {
-    name: "Inicio2",
+    name: "Practica Springboard",
     href: "/home2",
     children: []
   },
@@ -41,7 +41,7 @@ const menuData = [
     children: []
   },
   {
-    name: "Eventos",
+    name: "Eventos (Practica 2)",
     href: "/eventos",
     children: []
   }

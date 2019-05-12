@@ -1,28 +1,28 @@
 <template lang="pug">
   .pruebaContenedor.w-100.center.tc
-    h1 {{ msg }}
-    p {{ descripcion }}
-    #gridSpringboard.center.pa2-l.pa1 
+    h1 SpringBoard
+    #gridSpringboard.center.pa2-l.pa1
       div.cosa(v-for="index in lmax")
-        | {{ index }}
-        | {{ loremArray[aleatorio(min, max)].msg}}
-      
+        img(src="@/assets/images/bug.png" height="50px")
+        p {{ loremArray[aleatorio(min, max)].msg}}      
 </template>
 
 <script>
 import dataLorem from "@/assets/data/lorem.json";
+import imageBackground from "@/assets/images/sand.jpg";
 export default {
   name: "home",
   data() {
     return {
+      backg: imageBackground,
       min: "",
       max: "",
       lmax: "",
       dataL: "",
       loremArray: "",
-      msg: "Patrón Springboard2",
+      msg: "Patrón Springboard",
       descripcion:
-        "El patrón Springboard, también llamado Launchpad, fue el patrón de navegación más popular en 2011. Este diseño es una pantalla de inicio con opciones que actúan como puntos de inicio en la aplicación."
+        "El patrón Springboard, también llamado Launchpad, fue el patrón de navegación más popular en 2011. Pantalla de inicio que actúan como puntos de inicio en la aplicación."
     };
   },
   methods: {
@@ -44,6 +44,9 @@ export default {
     setLoremArray: function() {
       this.loremArray = this.dataL["loremArray"];
       console.log("loremArray ", this.loremArray);
+    },
+    getImgPath: function(partial) {
+      return "@/assets/images/" + partial;
     }
   },
   mounted() {
@@ -76,14 +79,26 @@ export default {
   div {
     border: 1px solid $red;
   }
+  #gridSpringboard_uno {
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 48%;
+    grid-gap: 1.3%;
+    grid-row-gap: 2%;
+  }
 }
 
 /* media queries para pantallas large*/
 @media #{$breakpoint-large} {
   .pruebaContenedor {
-    background: cyan;
+    background: white;
   }
   #gridSpringboard {
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: 32% 32% 32%;
+    grid-gap: 1.3%;
+    grid-row-gap: 2%;
+  }
+  #gridSpringboard_uno {
     grid-template-columns: 24% 24% 24% 24%;
     grid-template-rows: 32% 32% 32%;
     grid-gap: 1.3%;
@@ -92,10 +107,16 @@ export default {
 }
 @media #{$breakpoint-medium} {
   .pruebaContenedor {
-    background: cadetblue;
+    background: white;
   }
   #gridSpringboard {
     grid-template-columns: 32% 32% 32%;
+    grid-template-rows: 32% 32% 32% 32%;
+    grid-gap: 1.3%;
+    grid-row-gap: 2%;
+  }
+  #gridSpringboard_uno {
+    grid-template-columns: 24% 24% 24% 24%;
     grid-template-rows: 32% 32% 32% 32%;
     grid-gap: 1.3%;
     grid-row-gap: 2%;

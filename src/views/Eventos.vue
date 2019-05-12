@@ -28,27 +28,20 @@
     //Seccion3
     h1 {{ msg3 }}
     p {{ descripcion3 }}
-    div.evento(v-for="evento in listaEventos" class="container")    
-          b-container
-          b-row(style="border-top: 1px")
-              b-col
-                  <img :src="require(`@/assets/images/bug.png`)" width="80px"/>
-                  //no funciona ver https://github.com/vuejs-templates/webpack/issues/450
-                  //<img :src="require(`@/assets/images/${evento.imagen}`)" width="100px"/>
-          b-row
-            b-col(cols="4")
-            b-col(cols="2")
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ getMes( evento.fecha)}}</li>
-                    <li class="list-group-item">{{ getDiaInicio( evento.fecha)}}</li>
-                    <li class="list-group-item">{{ getDiaFinal(evento.fecha)}}</li>
-                  </ul>
-            b-col(cols="5")
-          b-row
-              b-col
-                  a {{ evento.titulo }}
-                  p {{ evento.fecha }}
-                  span {{ evento.ubicacion }}
+    div.evento(v-for="evento in listaEventos" class="container" width="50%" margin="0 auto")    
+      <img :src="require(`@/assets/images/bug.png`)" width="80px"/>
+      //no funciona ver https://github.com/vuejs-templates/webpack/issues/450
+      //<img :src="require(`@/assets/images/${evento.imagen}`)" width="100px"/>
+      table(align="center" border="dotted")
+        tr
+          | {{ getMes( evento.fecha)}}
+        tr
+          | {{ getDiaInicio( evento.fecha)}}
+        tr
+          | {{ getDiaFinal(evento.fecha)}}
+      a {{ evento.titulo }}
+      p {{ evento.fecha }}
+      span {{ evento.ubicacion }}                  
 </template>
 
 <script></script>
