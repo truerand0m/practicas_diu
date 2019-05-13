@@ -7,9 +7,39 @@ div
         div.cosa(v-for="index in lmax")
           img(src="@/assets/images/bug.png" height="50px")
           p {{ loremArray[aleatorio(min, max)].msg}}        
-    #myGridSpringBoard
-      div.cosa(v-for="index in lmax" height="50px")
-        img(src="@/assets/images/bug.png")
+    //-
+      div.cosa(v-for="index in lmax" class="myGridSpringBoard2")
+        img(src="@/assets/images/bug.png" height="50px")
+        img(src="@/assets/images/bug.png" height="50px")
+          
+    div(class="myGridSpringBoard4")
+      div(class="r1_1")
+        img(src="@/assets/images/bug.png" class="r1_1")
+      div(class="r1_2")
+        img(src="@/assets/images/bug.png" class="r1_2")
+        
+      div(class="r2_1")
+        img(src="@/assets/images/bug.png" class="r2_1")
+      div(class="r2_2")
+        img(src="@/assets/images/bug.png" class="r2_2")
+      div(class="r2_3")
+        img(src="@/assets/images/bug.png" class="r2_3")
+        
+      div(class="r3_1")
+        img(src="@/assets/images/bug.png" class="r3_1")            
+      div(class="r3_2")
+        img(src="@/assets/images/bug.png" class="r3_2")                  
+      div(class="r3_3")
+        img(src="@/assets/images/bug.png" class="r3_3")                  
+        
+      div(class="r4_1")
+        img(src="@/assets/images/bug.png" class="r4_1")                  
+      div(class="r4_2")
+        img(src="@/assets/images/bug.png" class="r4_2")                          
+      div(class="r4_3")
+        img(src="@/assets/images/bug.png" class="r4_3")
+      div(class="r5_1")
+        img(src="@/assets/images/bug.png" class="r5_1")         
 </template>
 
 <script>
@@ -91,9 +121,67 @@ export default {
     grid-gap: 1.3%;
     grid-row-gap: 2%;
   }
-  #myGridSpringBoard {
-    display: inline-grid;
-    grid-template-rows: 50% 50%;
+  .myGridSpringBoard2 {
+    display: grid;
+    grid-template-rows: 400px 800px;
+    grid-template-columns: 400px 400px 400px;
+  }
+  .myGridSpringBoard3 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .myGridSpringBoard4 {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .r1_1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .r1_2 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+  }
+
+  .r2_1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .r2_2 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+  .r2_3 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+  }
+
+  .r3_1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .r3_2 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+  .r3_3 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+  }
+
+  .r4_1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .r4_2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .r4_3 {
+    grid-column-start: 3;
+    grid-column-end: 6;
   }
 }
 
@@ -115,6 +203,7 @@ export default {
     grid-row-gap: 2%;
   }
 }
+
 @media #{$breakpoint-medium} {
   .pruebaContenedor {
     background: white;
