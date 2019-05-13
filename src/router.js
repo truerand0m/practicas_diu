@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Home2 from "./views/Home2.vue";
-
+import Galeria from "./views/Galeria.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -20,6 +20,11 @@ export default new Router({
       path: "/home2",
       name: "home2",
       component: Home2
+    },
+    {
+      path: "/galeria",
+      name: "galeria",
+      component: Galeria
     },
     {
       path: "/",
