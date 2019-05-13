@@ -2,11 +2,14 @@
 div
   .pruebaContenedor.w-100.center.tc
     h1 SpringBoard
-    #gridSpringboard.center.pa2-l.pa1
-      div.cosa(v-for="index in lmax")
-        img(src="@/assets/images/bug.png" height="50px")
-        p {{ loremArray[aleatorio(min, max)].msg}}        
-      
+    //-
+      #gridSpringboard.center.pa2-l.pa1
+        div.cosa(v-for="index in lmax")
+          img(src="@/assets/images/bug.png" height="50px")
+          p {{ loremArray[aleatorio(min, max)].msg}}        
+    #myGridSpringBoard
+      div.cosa(v-for="index in lmax" height="50px")
+        img(src="@/assets/images/bug.png")
 </template>
 
 <script>
@@ -87,6 +90,10 @@ export default {
     grid-template-rows: 48%;
     grid-gap: 1.3%;
     grid-row-gap: 2%;
+  }
+  #myGridSpringBoard {
+    display: inline-grid;
+    grid-template-rows: 50% 50%;
   }
 }
 
