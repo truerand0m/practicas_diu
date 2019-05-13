@@ -1,17 +1,12 @@
 <template lang="pug">
 div
   .pruebaContenedor.w-100.center.tc
-    h1 SpringBoard
-    //-
-      #gridSpringboard.center.pa2-l.pa1
-        div.cosa(v-for="index in lmax")
-          img(src="@/assets/images/bug.png" height="50px")
-          p {{ loremArray[aleatorio(min, max)].msg}}        
-    //-
-      div.cosa(v-for="index in lmax" class="myGridSpringBoard2")
+    h2 Ejercicio 1,2,3
+    #gridSpringboard.center.pa2-l.pa1
+      div.cosa(v-for="index in lmax")
         img(src="@/assets/images/bug.png" height="50px")
-        img(src="@/assets/images/bug.png" height="50px")
-          
+        p {{ loremArray[aleatorio(min, max)].msg}}        
+    h2 Ejercicio 4
     div(class="myGridSpringBoard4")
       div(class="r1_1")
         img(src="@/assets/images/bug.png" class="r1_1")
