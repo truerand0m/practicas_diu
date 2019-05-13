@@ -1,15 +1,18 @@
 <template lang="pug">
+div
   .pruebaContenedor.w-100.center.tc
     h1 SpringBoard
     #gridSpringboard.center.pa2-l.pa1
       div.cosa(v-for="index in lmax")
         img(src="@/assets/images/bug.png" height="50px")
-        p {{ loremArray[aleatorio(min, max)].msg}}      
+        p {{ loremArray[aleatorio(min, max)].msg}}        
+      
 </template>
 
 <script>
 import dataLorem from "@/assets/data/lorem.json";
 import imageBackground from "@/assets/images/sand.jpg";
+
 export default {
   name: "home",
   data() {
